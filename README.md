@@ -11,8 +11,14 @@ Modulo para reconocer a la persona a guiar.
 
 - En una terminal correr
         ```python3 cheese_action_server.py```
-- En otra terminal correr
+- (Como alternativa para el cliente) En otra terminal correr
         ```ros2 action send_goal cheese action_cheese/action/Cheese "{order: inicia}"```
+    - Tomará un momento en iniciar la cámara, oprimir _c_ en el teclado para tomar la foto
+
+# cheese_action_client.py
+
+- Después de hacer lo de arriba correr en otra terminal
+        ```python3 cheese_action_client.py```
 - Tomará un momento en iniciar la cámara, oprimir _c_ en el teclado para tomar la foto
 
 # face_recognition_pub
