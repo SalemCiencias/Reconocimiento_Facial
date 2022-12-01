@@ -5,7 +5,7 @@ Modulo para reconocer a la persona a guiar.
 
     self.cap = cv.VideoCapture(2)
     
-  Cambiar el 2 por el índice de la cámara a utilizar (checar /dev), la c
+  Cambiar el 2 por el índice de la cámara a utilizar (checar /dev), la cámara por default es la 0
 
 # cheese_action_server.py
 
