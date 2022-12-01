@@ -21,7 +21,7 @@ class CheeseActionServer(Node):
 
     def execute_callback(self, goal_handle):
         self.get_logger().info('Executing goal...')
-        cap = cv.VideoCapture(1)
+        cap = cv.VideoCapture(2)
         feedback_message = Cheese.Feedback()
         result = Cheese.Result()
         result.result = "NO"
@@ -71,7 +71,7 @@ class CheeseActionServer(Node):
                             feedback_message.progress))
                         goal_handle.publish_feedback(feedback_message)
 
-                if photos_taken >= 3:
+                if photos_taken >= 5:
                     all_photos_taken = True
                     feedback_message.progress = "Todas las fotos tomadas, cerrando..."
                     result.result = "YES"
