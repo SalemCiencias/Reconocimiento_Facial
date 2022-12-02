@@ -1,6 +1,10 @@
 # Reconocimiento_Facial
 Modulo para reconocer a la persona a guiar.
 
+- Se necesita tener OpenCV instalado:
+
+    ```pip install opencv-contrib-python --upgrade ```
+
 - Puede que se necesite cambiar la siguiente linea en los archivos _cheese_action_server.py_ (línea 24) y _face_recognition_pub.py_ (línea 17) si cv no reconoce la cámara
 
     self.cap = cv.VideoCapture(2)
