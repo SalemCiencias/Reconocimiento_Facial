@@ -4,6 +4,7 @@ from rclpy.node import Node
 import os
 import cv2 as cv
 from action_cheese.action import Cheese
+import sys
 
 
 class CheeseActionServer(Node):
@@ -15,13 +16,13 @@ class CheeseActionServer(Node):
             Cheese,
             'cheese',
             self.execute_callback)
-        
+        self.camara = int(sys.argv[1])
         self.profile_cascade = cv.CascadeClassifier(cv.data.haarcascades + 'haarcascade_profileface.xml')
         self.face_cascade = cv.CascadeClassifier(cv.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
     def execute_callback(self, goal_handle):
         self.get_logger().info('Executing goal...')
-        cap = cv.VideoCapture(2)
+        cap = cv.VideoCapture(self.camara)
         feedback_message = Cheese.Feedback()
         result = Cheese.Result()
         result.result = "NO"
